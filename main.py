@@ -2,8 +2,12 @@ def reverse_char(char):
     """
     Reverse a character either lower or capital!
     """
-    # define
+    # define alpha
     alphabets = 'abcdefgfijklmnopqrstuvwxyz'
+    # return char if not valid alphabet
+    if char not in alphabets and char not in alphabets.upper():
+        return char
+    
     # upper case
     if char in alphabets.upper():
         alphabets = alphabets.upper()
@@ -19,5 +23,10 @@ print(x)
 
 
 def atbash(txt):
-    pass
-print("hello")
+    reverseTxt=""
+    for char in txt:
+        reverseTxt += reverse_char(char)
+    return reverseTxt
+
+print(atbash("Hello world!") == "Svool dliow!")
+
